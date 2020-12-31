@@ -13,6 +13,10 @@
 ActiveRecord::Schema.define(version: 2020_12_31_025417) do
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "phone_number"
+    t.string "state"
+    t.string "city"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
