@@ -1,5 +1,5 @@
 class CraftsmanController < ApplicationController
     def index
-
+        @users = User.all
     end
 end
