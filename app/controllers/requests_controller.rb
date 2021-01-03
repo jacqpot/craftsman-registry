@@ -75,4 +75,4 @@ class RequestsController < ApplicationController
     def request_params
        params.require(:request).permit(:name, :email, :phone_number, :description)
     end
- end
+end
