@@ -1,22 +1,13 @@
 <h1>A new request has been submitted</h1>
 
 <p>
-    <ul>
-        <li>
+
             <%= @request.name %>
-        </li>
-        <li>
+            <br>
+            <%= @request.email %>
+            <br>
+            <%= @request.phone_number %>
             <blockquote>
                 <%= @request.description %>
             </blockquote>
-        </li>
-        <li>
-
-            <%= @request.email %>
-        </li>
-        <li>
-
-            <%= @request.phone_number %>
-        </li>
-    </ul>
 </p>

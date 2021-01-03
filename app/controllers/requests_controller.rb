@@ -28,9 +28,9 @@ class RequestsController < ApplicationController
        @request = Request.new(request_params)
        
        respond_to do |format|
-          if @requests.save
-             format.html { redirect_to @requests, notice: 'User Details where successfully created.' }
-             format.json { render :show, status: :created, location: @requests }
+          if @request.save
+            RequestMailer.with(request: @request).new_request.deliver_now
+            redirect_to root_path
           else
              format.html { render :new }
              format.json { render json: @requests.errors, status: :unprocessable_entity }
