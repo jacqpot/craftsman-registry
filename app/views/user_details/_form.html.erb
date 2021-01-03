@@ -1,5 +1,5 @@
 <%= form_for @user_details do |f| %>
-<%= f.hidden_field :user_id, :value => current_user.id %>
+<% f.hidden_field :user_id, :value => current_user.id %>
 <br>
   <div>
     <%= f.label "name" %><br />
