@@ -1,0 +1,25 @@
+<%= form_for @user_details do |f| %>
+<%= f.hidden_field :user_id, :value => current_user.id %>
+<br>
+  <div>
+    <%= f.label "name" %><br />
+    <%= f.text_field :name, class: 'field' %>
+  </div>
+
+  <div>
+    <%= f.label "phone_number" %><br />
+    <%= f.text_field :phone_number, class: 'field' %>
+  </div>
+
+  <div>
+    <%= f.label "state" %><br />
+    <%= f.text_field :state, class: 'field' %>
+  </div>
+
+  <div>
+    <%= f.label "city" %><br />
+    <%= f.text_field :city, class: 'field' %>
+  </div>
+  <%= flash[:errors] if flash[:errors] %>
+  <%= f.submit %>
+  <% end %>

@@ -1,6 +1,6 @@
 <%= link_to 'logout', destroy_user_session_path, method: :delete %>
-<% if current_user.user_detail! %>
-<%= link_to 'Edit my Details', update_user_detail_path(@user.id) %>
+<% if current_user.user_details %>
+<%= link_to 'Edit my Details', edit_user_detail_path(current_user.id) %>
 <% else %>
-<%= link_to 'Add my Contact information', new_user_detail_path(@user.id) %>
+<%= link_to 'Add my Contact information', new_user_detail_path(current_user.id) %>
 <% end %>

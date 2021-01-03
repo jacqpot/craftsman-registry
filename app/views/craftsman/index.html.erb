@@ -1,5 +1,5 @@
 <br>
-<% if @user %>
+<% if current_user %>
 <%= render partial: "navbar" %>
 <% end %>
 <h1>welcome to craftsman repository </h1>
@@ -10,3 +10,7 @@
     <li> <%= user.email %></li>
 </ul>
 <%end  %>
+
+<h1> to request a project from the abalible craftsman submit the below form and an email will be sent to them to connect with you.</h1>
+
+<%= render partial: 'request_form' %>
