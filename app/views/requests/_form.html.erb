@@ -1,6 +1,5 @@
-<%= form_for @user_details do |f| %>
+<%= form_for :request do |f| %>
 
-<br>
   <div>
     <%= f.label "name" %><br />
     <%= f.text_field :name, class: 'field' %>
@@ -17,8 +16,8 @@
 
   <div>
     <%= f.label "description" %><br />
-    <%= f.text_field :description, class: 'field' %>
+    <%= f.text_area :description, class: 'field' %>
   </div>
   <%= flash[:errors] if flash[:errors] %>
-  <%= f.submit %>
+  <%= f.submit "send"%>
   <% end %>
