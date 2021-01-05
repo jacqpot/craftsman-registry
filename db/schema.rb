@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_03_025000) do
+ActiveRecord::Schema.define(version: 2021_01_05_195851) do
 
   create_table "requests", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,22 @@ ActiveRecord::Schema.define(version: 2021_01_03_025000) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "processed", default: false
+  end
+
+  create_table "skills", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "skills_users", id: false, force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "skill_id", null: false
+    t.integer "users_id"
+    t.integer "skills_id"
+    t.index ["skills_id"], name: "index_skills_users_on_skills_id"
+    t.index ["users_id"], name: "index_skills_users_on_users_id"
   end
 
   create_table "user_details", force: :cascade do |t|
@@ -44,4 +60,6 @@ ActiveRecord::Schema.define(version: 2021_01_03_025000) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "skills_users", "skills", column: "skills_id"
+  add_foreign_key "skills_users", "users", column: "users_id"
 end
