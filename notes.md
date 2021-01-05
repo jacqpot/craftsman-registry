@@ -1,4 +1,2 @@
-- requests page needs a back button
-- make list of craftsman dynamic
 - create show page of each craftsman
 - find out how to change the root to not require login

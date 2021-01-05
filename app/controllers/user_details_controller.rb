@@ -10,6 +10,9 @@ class UserDetailsController < ApplicationController
     # GET /userDetails/1
     # GET /userDetails/1.json
     def show
+
+      @user = User.find(@user_details.user_id)
+   
     end
     
     # GET /userDetails/new
