@@ -1,6 +1,6 @@
 class UserDetailsController < ApplicationController
     before_action :set_user_Details, only: [:show, :edit, :update, :destroy]
-    
+    before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
     # GET /userDetails
     # GET /userDetails.json
     def index
