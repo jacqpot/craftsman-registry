@@ -5,9 +5,9 @@
 <h1>welcome to craftsman repository </h1>
 
 <h3>Here is a list of all the craftsman</h3>
-<% @users.each do |user| %>
+<% @user_detail.each do |user| %>
 <ul>
-    <li> <%= user.email %></li>
+    <li> <%= link_to "#{user.name}", user_detail_path(user.user_id)%></li>
 </ul>
 <%end  %>
 
