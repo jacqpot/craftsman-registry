@@ -21,6 +21,6 @@
     <%= f.label "city" %><br />
     <%= f.text_field :city, class: 'field' %>
   </div>
-  <%= f.hidden_field(:user_id, value: "user_id") %>
+  <%= f.hidden_field(:user_id, value: current_user.id) %>
   <%= f.submit %>
   <% end %>
