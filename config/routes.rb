@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :skills
   resources :requests
   resources :user_details
+  resources :toolbelts do 
+    resources :skills
+  end
   devise_for :users, controllers: {
     sessions: 'users/sessions'
   }

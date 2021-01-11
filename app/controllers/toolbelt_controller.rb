@@ -1,2 +1,0 @@
-class ToolbeltController < ApplicationController
-end
