@@ -1,3 +1,4 @@
+
 class UserDetailsController < ApplicationController
     before_action :set_user_Details, only: [:show, :edit, :update, :destroy]
     before_action :authenticate_user!, only: [:new, :edit, :update, :destroy]
@@ -17,29 +18,30 @@ class UserDetailsController < ApplicationController
     
     # GET /userDetails/new
     def new
+       @user_detail = UserDetail.new
+      #  byebug
+   end
+   
+   # GET /userDetails/1/edit
+   def edit
+   end
+   
+   # POST /userDetails
+   # POST /userDetails.json
+   def create
+      @user_detail = UserDetail.new(user_details_params)
+      byebug
+   
+      if @user_detail.save
+      redirect_to :root_path
 
-       @user_details = UserDetail.new
-    end
-    
-    # GET /userDetails/1/edit
-    def edit
-    end
-    
-    # POST /userDetails
-    # POST /userDetails.json
-    def create
-       @user_details = UserDetail.new(user_details_params)
-       
-
-          if @user_details.save
-             format.html { redirect_to root }
-
-          else
-            alert(@user_details.errors.full_error_messages)
-             format.html { render :new }
-          end
-       
-       
+      else
+      
+      flash[:notice] = @user_detail.errors.messages.flatten
+      render :new
+      end
+      
+      
     end
     
     # PATCH/PUT /userDetails/1
