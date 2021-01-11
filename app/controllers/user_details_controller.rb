@@ -30,15 +30,15 @@ class UserDetailsController < ApplicationController
     def create
        @user_details = UserDetail.new(user_details_params)
        
-       respond_to do |format|
+
           if @user_details.save
-             format.html { redirect_to @user_details, notice: 'User Details where successfully created.' }
-             format.json { render :show, status: :created, location: @user_details }
+             format.html { redirect_to root }
+
           else
+            alert(@user_details.errors.full_error_messages)
              format.html { render :new }
-             format.json { render json: @user_details.errors, status: :unprocessable_entity }
           end
-       end
+       
        
     end
     

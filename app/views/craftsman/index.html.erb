@@ -1,11 +1,11 @@
 <br>
 
-<%= render partial: "navbar" %>
+<%= render partial: "navbar", locals: {user: @user, user_detail: @user_detail}%>
 
 <h1>welcome to craftsman repository </h1>
 
 <h3>Here is a list of all the craftsman</h3>
-<% @user_detail.each do |user| %>
+<% @user_details.each do |user| %>
 <ul>
     <li> <%= link_to "#{user.name}", user_detail_path(user.user_id)%></li>
 </ul>

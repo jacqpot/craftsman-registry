@@ -1,2 +1,0 @@
-- create show page of each craftsman
-- find out how to change the root to not require login
