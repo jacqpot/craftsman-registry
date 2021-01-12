@@ -48,7 +48,7 @@ class UserDetailsController < ApplicationController
     # PATCH/PUT /userDetails/1.json
     def update
        respond_to do |format|
-         byebug
+         # byebug
           if @user_detail.update(user_details_params)
              format.html { redirect_to @user_detail, notice: 'user details where successfully updated.' }
           else

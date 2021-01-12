@@ -19,10 +19,10 @@ class ToolbeltsController < ApplicationController
        end
        def create 
         #    @toolbelt = current_user.toolbelts.build(toolbelt_params)
-        @toolbelt = Toolbelt.new(request_params)
+        @toolbelt = Toolbelt.new(toolbelt_params)
 
            if @toolbelt.save 
-               redirect_to user_detail_path(current_user.id)
+               redirect_to edit_user_detail_path(current_user.id)
            else 
                flash.now[:errors] = @toolbelt.errors.full_messages
                render :new 

@@ -4,18 +4,13 @@
 <br>
 <br>
 this is the craftsman User details show page
-<br>
-<%= @user_detail.name %>
-<br>
-<%= @user_detail.phone_number %>
-<br>
-<%= @user.email %>
-<br>
-<%= @user_detail.city %>
-<br>
-<%= @user_detail.state %>
 
+
+<%= @user.email %>
+
+<%= render partial: 'edit' %>
 <br>
+
 <br>
 <br>
 <%= link_to 'home', root_path %>

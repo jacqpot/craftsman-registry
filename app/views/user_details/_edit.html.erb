@@ -1,14 +1,14 @@
 <h1>Edit</h1>
 
 <%= render partial: 'form' %>
-<%= render partial: "toolbelt/new", locals: {user: current_user} %>
-<%= link_to "Add Skill" new_toolbelt_path %>
+
+<%= link_to "Add Skill", new_toolbelt_path %>
 
 <% if !current_user.toolbelts.empty? %>
 <% current_user.toolbelts.each do |skill| %>
 <ul>
 <li>
-<%= skill.skill.name %>
+<%= skill.skill.title %>
 </li>
 </ul>
 <% end %>

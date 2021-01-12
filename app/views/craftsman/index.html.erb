@@ -4,13 +4,14 @@
 
 <h1>welcome to craftsman repository </h1>
 
-<h3>Here is a list of all the craftsman</h3>
-<% @user_details.each do |user| %>
-<ul>
-    <li> <%= link_to "#{user.name}", user_detail_path(user.user_id)%></li>
-</ul>
-<%end  %>
+<p>this is a place where you can find skilled leather craftsman</p>
 
+<h3>what kind of work are you looking for?</h3>
+
+<%= form_with(url: '/toolbelts', method: 'get', local: true) do %>
+  <%= text_field_tag(:search) %>
+  <%= submit_tag("Search") %>
+<% end %>
 <h2> If none of the above craftsman listed in your area list your project type, submit a request below to have our administrators help find a craftsman.</h2>
 
 
