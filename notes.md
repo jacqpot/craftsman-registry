@@ -1,0 +1,3 @@
+- create card for each skill
+- on click of card, new page displaying craftsman cards who can do the job
+-

@@ -9,7 +9,7 @@ class ToolbeltsController < ApplicationController
            else 
                @toolbelts = Toolbelt.all
            end
-           @craftsman = Toolbelt.search(params[:search])
+
         end
    
    
