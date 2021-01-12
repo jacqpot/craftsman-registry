@@ -15,11 +15,12 @@ class ToolbeltsController < ApplicationController
        def new 
             @skills = Skill.all
            @toolbelt = Toolbelt.new
-           @toolbelt.build_person_of_interest
+        #    @toolbelt.build_person_of_interest
        end
        def create 
-           @toolbelt = current_user.toolbelts.build(toolbelt_params)
-            
+        #    @toolbelt = current_user.toolbelts.build(toolbelt_params)
+        @toolbelt = Toolbelt.new(request_params)
+
            if @toolbelt.save 
                redirect_to user_detail_path(current_user.id)
            else 

@@ -1,7 +1,8 @@
 <%= form_for @toolbelt do |f| %>
 <div>
     <%= f.label "skill" %><br />
-    <%= f.select :id, @skills.map {|skill| [skill.name, skill.id]} %>
+    <%= f.select :skill_id, @skills.map {|skill| [skill.title, skill.id]} %>
+
   </div>
   <%= f.hidden_field(:user_id, value: current_user.id) %>
   <%= f.submit %>
