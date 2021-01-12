@@ -8,10 +8,13 @@
 
 <h3>what kind of work are you looking for?</h3>
 
-<%= form_with(url: '/toolbelts', method: 'get', local: true) do %>
-  <%= text_field_tag(:search) %>
-  <%= submit_tag("Search") %>
-<% end %>
+<%= form_with(url: '/toolbelts', method: 'get', local: true) do |f|%>
+<div>
+    <%= f.label "skill" %><br />
+    <%= f.select :search, @skills.map {|skill| [skill.title, skill.id]} %>
+</div>
+  <%= f.submit "Search"%>
+  <% end %>
 <h2> If none of the above craftsman listed in your area list your project type, submit a request below to have our administrators help find a craftsman.</h2>
 
 

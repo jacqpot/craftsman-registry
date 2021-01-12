@@ -8,7 +8,8 @@ class CraftsmanController < ApplicationController
         end
         @user_details = UserDetail.all
         @users = User.all
-
+        @skills = Skill.all
+        @skill = Toolbelt.search(params[:search])
     end
 
     private
