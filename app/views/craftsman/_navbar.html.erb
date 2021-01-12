@@ -4,6 +4,6 @@
 <% else %>
 
 <%= link_to 'logout', destroy_user_session_path, method: :delete %>
-
+<%= link_to 'home', root_path %>
 <%= link_to 'my profile', craftsman_path(current_user.id) %>
 <% end %>

@@ -11,6 +11,13 @@ class CraftsmanController < ApplicationController
         # @skill = Toolbelt.search(params[:search])
     end
 
+    def show
+        if current_user
+
+            @user = User.find_by(id: current_user.id)
+        end
+    end
+
     private
 
     def set_user 
