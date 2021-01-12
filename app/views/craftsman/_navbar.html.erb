@@ -5,11 +5,5 @@
 
 <%= link_to 'logout', destroy_user_session_path, method: :delete %>
 
-<% if !@user_detail %>
-<%= link_to 'Add my Contact information', new_user_detail_path %>
-<% else %>
-<%# <%= link_to 'Edit my Details', edit_user_detail_path(current_user.id) %> %>
-<%= link_to "my profile", user_detail_path(current_user.id) %>
-<% end %>
-
+<%= link_to 'my profile', craftsman_path(current_user.id) %>
 <% end %>

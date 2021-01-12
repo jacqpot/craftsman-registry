@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-  has_many :user_details
   has_many :toolbelts
   has_many :skills, through: :toolbelts
   # Include default devise modules. Others available are:

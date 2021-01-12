@@ -38,17 +38,11 @@ ActiveRecord::Schema.define(version: 2021_01_06_013513) do
     t.index ["user_id"], name: "index_toolbelts_on_user_id"
   end
 
-  create_table "user_details", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "phone_number"
     t.string "state"
     t.string "city"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"

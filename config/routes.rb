@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :skills
   resources :requests
-  resources :user_details
+
   resources :toolbelts
   resources :craftsman
   devise_for :users, controllers: {
