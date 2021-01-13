@@ -10,7 +10,7 @@ class SkillsController < ApplicationController
     # GET /skills/1
     # GET /skills/1.json
     def show
-
+      
    
     end
     

@@ -8,8 +8,11 @@
 
 <h3>what kind of work are you looking for?</h3>
 
+<% @skills.each do |skill| %>
 
+<%= render partial: 'skills/show', locals: {skill: skill} %>
 
+<% end %>
 <h2> If none of the above craftsman listed in your area list your project type, submit a request below to have our administrators help find a craftsman.</h2>
 
 

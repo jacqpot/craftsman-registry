@@ -1,15 +1,14 @@
 <%= render partial: 'navbar' %>
 
 <%= @user.name %>
+<br>
 <%= @user.email %>
+<br>
 <%= @user.phone_number %>
+<br>
 <%= @user.city %>
+<br>
 <%= @user.state %>
 
 <br>
-
-
-<br>
-
-<br>
-<br>
+<%= render partial: 'toolbelts/new', locals: {user: @user} %>
