@@ -1,3 +1,16 @@
-Here are the craftsman we suggest based on your search 
+<%= render partial: "crafsman/navbar"%>
+<br>
 
-<%= @craftsman %>
+<% if !current_user.skills.empty?%>
+
+<% current_user.skills.each do |skill| %>
+<br>
+    <%= skill.title %>
+<% end %>
+<% else %>
+you dont have any skills in your toolbelt yet
+<% end %>
+<br>
+<%# <%= link_to "add a skill", new_toolbelt_path %>
+
+<%= render partial: 'new', locals: {skills: @skills, toolbelt: @toolbelt} %>

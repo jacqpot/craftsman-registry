@@ -9,7 +9,8 @@ class ToolbeltsController < ApplicationController
            else 
                @toolbelts = Toolbelt.all
            end
-
+           @skills = Skill.all
+           @toolbelt = Toolbelt.new
         end
    
    
@@ -23,7 +24,7 @@ class ToolbeltsController < ApplicationController
         @toolbelt = Toolbelt.new(toolbelt_params)
 
            if @toolbelt.save 
-               redirect_to edit_user_detail_path(current_user.id)
+               redirect_to user_toolbelts_path(current_user.id)
            else 
                flash.now[:errors] = @toolbelt.errors.full_messages
                render :new 

@@ -1,1 +1,10 @@
-<%= render partial: 'toolbelts/form' %>
+<%# <%= byebug %> 
+<%= form_for toolbelt do |f| %>
+<div>
+    <%= f.label "skill" %><br />
+    <%= f.select :skill_id, skills.map {|skill| [skill.title, skill.id]} %>
+
+  </div>
+  <%= f.hidden_field(:user_id, value: current_user.id) %>
+  <%= f.submit "Add Skill"%>
+  <% end %>

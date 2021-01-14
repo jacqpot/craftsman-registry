@@ -11,4 +11,4 @@
 <%= @user.state %>
 
 <br>
-<%= render partial: 'toolbelts/new', locals: {user: @user} %>
+<%=link_to 'my skills', user_toolbelts_path(@user.id) %>
