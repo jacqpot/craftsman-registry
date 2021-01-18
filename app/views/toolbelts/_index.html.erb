@@ -1,4 +1,4 @@
-<%= render partial: "craftsman/navbar"%>
+
 <br>
 
 <% if !current_user.skills.empty?%>
@@ -12,5 +12,3 @@ you dont have any skills in your toolbelt yet
 <% end %>
 <br>
 <%# <%= link_to "add a skill", new_toolbelt_path %>
-
-<%= render partial: 'new', locals: {skills: @skills, toolbelt: @toolbelt} %>

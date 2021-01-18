@@ -12,3 +12,8 @@
 
 <br>
 <%=link_to 'my skills', user_toolbelts_path(@user.id) %>
+
+<%= render  'toolbelts/index'  %>
+
+
+<%= render partial: 'toolbelts/new', locals: {skills: @skills, toolbelt: @toolbelt} %>
