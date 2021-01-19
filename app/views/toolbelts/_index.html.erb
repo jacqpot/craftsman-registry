@@ -3,11 +3,11 @@
 
 <% if !current_user.skills.empty?%>
 
-<% current_user.skills.each do |skill| %>
+<% current_user.toolbelts.each do |toolbelt| %>
 <br>
-    <%= skill.title %>
-    <%= button_to "delete", {:controller => :toolbelts, :action => 'destroy', :id => current_user.toolbelts.includes(:skill)}, :method => :delete  %>
-    <%=  %>
+    <%= render partial: 'toolbelts/show', locals: {toolbelt: toolbelt} %>
+
+    
 <% end %>
 <% else %>
 you dont have any skills in your toolbelt yet

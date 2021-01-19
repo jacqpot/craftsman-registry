@@ -49,7 +49,7 @@ class ToolbeltsController < ApplicationController
         byebug
        @toolbelt.destroy
        flash[:notice] = "skill removed."
-       redirect_to 'user_details#show'
+       redirect_to craftsman_path(current_user.id)
        end
 
    
