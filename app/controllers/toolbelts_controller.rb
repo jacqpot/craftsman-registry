@@ -24,7 +24,7 @@ class ToolbeltsController < ApplicationController
         @toolbelt = Toolbelt.new(toolbelt_params)
 
            if @toolbelt.save 
-               redirect_to user_toolbelts_path(current_user.id)
+               redirect_to craftsman_path(current_user.id)
            else 
                flash.now[:errors] = @toolbelt.errors.full_messages
                render :new 
@@ -46,6 +46,7 @@ class ToolbeltsController < ApplicationController
        end
    
        def destroy
+        byebug
        @toolbelt.destroy
        flash[:notice] = "skill removed."
        redirect_to 'user_details#show'

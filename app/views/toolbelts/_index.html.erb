@@ -6,6 +6,8 @@
 <% current_user.skills.each do |skill| %>
 <br>
     <%= skill.title %>
+    <%= button_to "delete", {:controller => :toolbelts, :action => 'destroy', :id => current_user.toolbelts.includes(:skill)}, :method => :delete  %>
+    <%=  %>
 <% end %>
 <% else %>
 you dont have any skills in your toolbelt yet

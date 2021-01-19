@@ -1,0 +1,19 @@
+<br>
+
+<%= render partial: "navbar", locals: {user: @user}%>
+
+<h1>welcome to craftsman repository </h1>
+
+<p>this is a place where you can find skilled leather craftsman</p>
+
+<h3>what kind of work are you looking for?</h3>
+
+<% @skills.each do |skill| %>
+
+<%= render partial: 'skills/show', locals: {skill: skill} %>
+
+<% end %>
+<h2> If none of the above craftsman listed in your area list your project type, submit a request below to have our administrators help find a craftsman.</h2>
+
+
+<%= link_to "requests", new_request_path %>

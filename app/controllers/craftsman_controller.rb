@@ -17,6 +17,7 @@ class CraftsmanController < ApplicationController
             @user = User.find_by(id: current_user.id)
         end
         @toolbelt = Toolbelt.new
+        @skills = Skill.all
     end
 
     private
