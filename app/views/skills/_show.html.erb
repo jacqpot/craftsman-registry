@@ -1,6 +1,7 @@
 <br>
 <%= skill.title %>
 <% skill.users.each do |user| %>
-
+<% if user.avalible === true %>
 <%= user.name %>
+<% end %>
 <% end %>
