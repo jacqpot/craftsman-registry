@@ -2,7 +2,29 @@
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
+  <div>
+    <%= f.label "name" %><br />
+    <%= f.text_field :name, class: 'field', autocomplete: "Name" %>
+  </div>
 
+  <div>
+    <%= f.label "phone_number" %><br />
+    <%= f.text_field :phone_number, class: 'field', autocomplete: "phone Number" %>
+  </div>
+
+  <div>
+    <%= f.label "state" %><br />
+    <%= f.text_field :state, class: 'field', autocomplete: "State" %>
+  </div>
+
+  <div>
+    <%= f.label "city" %><br />
+    <%= f.text_field :city, class: 'field', autocomplete: "City" %>
+  </div>
+  <div>
+    <%= f.check_box :avalible %>
+    <%= f.label :avalible, 'public profile?' %>
+  </div>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
